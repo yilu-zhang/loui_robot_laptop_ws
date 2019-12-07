@@ -1,0 +1,8 @@
+prefix=/home/yiluzhang/code/loui_robot_laptop_ws/install
+
+Name: rasp4b_core
+Description: Description of rasp4b_core
+Version: 0.0.0
+Cflags: -I/home/yiluzhang/code/loui_robot_laptop_ws/install/include
+Libs: -L/home/yiluzhang/code/loui_robot_laptop_ws/install/lib 
+Requires: geometry_msgs message_generation message_runtime roscpp rospy std_msgs

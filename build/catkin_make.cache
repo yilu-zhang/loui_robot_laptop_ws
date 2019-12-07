@@ -1,0 +1,2 @@
+rasp4b_core
+-DCATKIN_DEVEL_PREFIX=/home/yiluzhang/code/loui_robot_laptop_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yiluzhang/code/loui_robot_laptop_ws/install -G Unix Makefiles
