@@ -125,6 +125,9 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(show_encoder_vel src/show_encoder_vel.cpp)
+target_link_libraries(show_encoder_vel ${catkin_LIBRARIES})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/rasp4b_core.cpp
