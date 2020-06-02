@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "rasp4b_core/SensorState.h"
+#include <math.h>
 
 double last_t=0;
 int wrong_cnt=0;
@@ -12,7 +13,15 @@ void show_vel_callback(const rasp4b_core::SensorState::ConstPtr& msg)
 		ROS_WARN("wrong_seq:%d %d\n\n",msg->header.seq,wrong_cnt);	
 	}
 	last_t = now_t;
-	printf("%f:%f\n",msg->header.stamp.toSec(),(msg->r_velocity+msg->l_velocity)/2);
+	double vel=(msg->r_velocity+msg->l_velocity)/2;
+	if(fabs(vel)>2)
+	{
+		ROS_WARN("%f:%f %f %f",msg->header.stamp.toSec(),vel,msg->r_velocity,msg->l_velocity);	
+	}
+	else
+	{
+		printf("%f:%f\n",msg->header.stamp.toSec(),vel);
+	}
 }
 
 int main(int argc, char **argv)
